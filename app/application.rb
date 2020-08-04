@@ -22,9 +22,10 @@ class Application
       @@cart.each do |item|
         resp.write "#{item}\n"
       end
-    #elsif req.path.match(/add/)
+    elsif req.path.match(/add/)
+      search_item = req.params["item"]
     else
-      resp.write "Cart is Empty"
+      resp.write "Your cart is empty"
     end
 
     resp.finish
